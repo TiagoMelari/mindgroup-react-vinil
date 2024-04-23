@@ -24,8 +24,8 @@ export default function Home() {
         alert('Não foi possível validar suas credenciais, por favor tente novamente.');
       }
     } catch (error) {
-        console.error('Erro ao autenticar o usuário', error);
-        alert('Ocorreu um erro ao autenticar. Por favor, tente novamente.');
+      console.error('Erro ao autenticar o usuário:', error);
+      alert('Ocorreu um erro ao autenticar. Por favor, tente novamente.');
     }
   };
 
@@ -45,20 +45,20 @@ export default function Home() {
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <label htmlFor="email">Email:</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
+          <input
+            type="email"
+            id="email"
+            name="email"
             onChange={(e) => setEmail(e.target.value)}
-            />
+          />
 
           <label htmlFor="senha">Senha:</label>
-          <input 
-            type="password" 
-            id="senha" 
-            name="senha" 
+          <input
+            type="password"
+            id="senha"
+            name="senha"
             onChange={(e) => setSenha(e.target.value)}
-            />
+          />
 
           <button type="submit">Entrar</button>
         </form>
