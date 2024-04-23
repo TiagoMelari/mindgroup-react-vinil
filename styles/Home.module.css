@@ -108,6 +108,15 @@
   margin-left: 0.5rem;
 }
 
+.modalOverlay {
+  display: none;
+}
+
+.modalOverlay.active {
+  display: block;
+}
+
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
