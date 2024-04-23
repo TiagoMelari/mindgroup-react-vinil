@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import '../../styles/globals.css';
 import React, { useState } from 'react';
 
 
@@ -12,7 +11,7 @@ export default function Home() {
     event.preventDefault();
 
     if (!email || !senha) return;
-    
+
     try {
       const response = await fetch('/pags/api/login', {
         method: 'POST',
@@ -43,7 +42,7 @@ export default function Home() {
 
       <main className="main">
         <h1 className="title">
-          Você está na Vinil, insira suas credenciais!
+          Bem vindo a Vinil!
         </h1>
 
         <form className="form" onSubmit={handleSubmit}>
@@ -67,12 +66,18 @@ export default function Home() {
         </form>
 
         <p className="signup">
-          Novo usuário? <a href="/cadastro">Cadastre-se</a>
+          Novo usuário? 
+           <Link href="/cadastro">
+            Cadastre-se
+           </Link>
         </p>
       </main>
 
       <footer className="footer">
-        Powered by <Link href='https://www.linkedin.com/in/tiago-melari-81793862/'>Tiago Melari</Link>
+        <p>Gostou do projeto? Entre em
+          <Link href='https://www.linkedin.com/in/tiago-melari-81793862/'> contato </Link>
+          comigo!
+        </p>
       </footer>
     </div>
   );

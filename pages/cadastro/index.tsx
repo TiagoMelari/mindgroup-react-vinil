@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import "../../styles/globals.css";
 import React, { useState } from "react";
 import { validarEmail, validarSenha, validarConfirmacaoSenha } from '../../utils/validadores';
 
@@ -111,8 +110,11 @@ export default function Cadastro() {
         </p>
       </main>
 
-      <footer className="footer"> {/* Use a classe diretamente */}
-        Powered by <Link href='https://www.linkedin.com/in/tiago-melari-81793862/'>Tiago Melari</Link>
+      <footer className="footer">
+        <p>Gostou do projeto? Entre em
+          <Link href='https://www.linkedin.com/in/tiago-melari-81793862/'>contato</Link>
+          comigo!
+        </p>
       </footer>
     </div>
   );
