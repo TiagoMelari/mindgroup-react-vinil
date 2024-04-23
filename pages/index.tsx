@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
+import '../../styles/globals.css';
 import React, { useState } from 'react';
 
 
@@ -10,8 +10,11 @@ export default function Home() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!email || !senha) return;
+    
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/pags/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -31,19 +34,19 @@ export default function Home() {
 
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>Vinil Store - Login</title>
         <meta name="description" content="Vinil Store" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+      <main className="main">
+        <h1 className="title">
           Você está na Vinil, insira suas credenciais!
         </h1>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -63,12 +66,12 @@ export default function Home() {
           <button type="submit">Entrar</button>
         </form>
 
-        <p className={styles.signup}>
+        <p className="signup">
           Novo usuário? <a href="/cadastro">Cadastre-se</a>
         </p>
       </main>
 
-      <footer className={styles.footer}>
+      <footer className="footer">
         Powered by <Link href='https://www.linkedin.com/in/tiago-melari-81793862/'>Tiago Melari</Link>
       </footer>
     </div>
