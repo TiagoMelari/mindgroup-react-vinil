@@ -1,6 +1,6 @@
 import React from "react";
 import styles from '../styles/Home.module.css';
-import Produto from '../types/Produto';
+import Produto from '../../types/Produto';
 
 interface Props {
     produto: Produto;
