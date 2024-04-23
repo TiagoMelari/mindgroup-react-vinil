@@ -72,5 +72,5 @@ export default function Home() {
         Powered by <Link href='https://www.linkedin.com/in/tiago-melari-81793862/'>Tiago Melari</Link>
       </footer>
     </div>
-  )
-}
+  );
+};
