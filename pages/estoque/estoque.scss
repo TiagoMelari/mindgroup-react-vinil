@@ -32,19 +32,5 @@
 }
 
 #button-estq {
-    font-size: 18px;
-    width: 120px;
-    margin-top: 30px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    color: $primary-color;
-    text-align: center;
-    font-size: 15px;
-    position: relative;
-
-    &:hover {
-        background-color: darken($complementary-color-2, 10%);
-    }
+    left: 0px;
 }
