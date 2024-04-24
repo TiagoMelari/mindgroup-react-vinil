@@ -1,21 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap');
 
-$primary-color: #0070f3;
-$secondary-color: #eaeaea;
+$primary-color: #121212;
+$complementary-color-1: #DBDBE5;
+$complementary-color-2: #A5B7C1;
+$complementary-color-3: #535D55;
+$complementary-color-4: #514644;
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, Roboto Slab, Pacifico, Playfair Display;
+  background-color: $primary-color;
+  color: $complementary-color-2;
+  font-size: 1.1em;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+h1 {
+  font-family: Pacifico;
+  padding-bottom: 80px;
+  font-size: 0.8em;
 }
 
 .container {
@@ -23,33 +27,112 @@ a {
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  bottom: 230px;
+}
+
+.form {
+  padding: 18px;
+  font-family: Roboto Slab;
+}
+
+.input {
+  width: 400px;
+  height: 25px;
+  font-size: 20px;
+
+
+  &::placeholder {
+    /*chrome, opera, safari e firefox*/
+    color: $complementary-color-2;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    /*ia 10-11*/
+    color: $complementary-color-2;
+  }
+
+  &::-ms-input-placeholder {
+    color: $complementary-color-2;
+  }
+}
+
+.label {
+  display: block;
+  padding: 8px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  font-size: 1.3em;
+}
+
+.label-senha {
+  margin-top: 40px;
+  display: block;
+  padding: 8px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  font-size: 1.3em;
+}
+
+
+.button {
+  font-size: 18px;
+  width: 160px;
+  height: 40px;
+  display: block;
+  margin-top: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: $primary-color;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.cadastro {
+  padding: 5px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: $complementary-color-4
+}
+
+.signup {
+  font-family: Roboto Slab;
+  margin-top: 80px;
+  font-size: 0.9em;
 }
 
 .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid $secondary-color;
+  border-top: 2.5px solid $complementary-color-3;
   justify-content: center;
   align-items: center;
+  font-family: Playfair Display;
+  font-size: 1.1em;
 }
 
 .footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  font-weight: bold;
+  text-decoration: underline;
+  color: $complementary-color-4;
 }
 
 .title a {
-  color: $primary-color;
+  color: $complementary-color-4;
   text-decoration: none;
 }
 
@@ -65,104 +148,16 @@ a {
   font-size: 4rem;
 }
 
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
+.logo_container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid $secondary-color;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-
-  &:hover,
-  &:focus,
-  &:active {
-    color: $primary-color;
-    border-color: $primary-color;
-  }
-
-  h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-  }
-
-  p {
-    margin: 0;
-    font-size: 1.25rem;
-    line-height: 1.5;
-  }
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-.modalOverlay {
-  display: none;
-
-  &.active {
-    display: block;
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  body {
-    color: white;
-    background: black;
-  }
-
-  .card,
-  .footer {
-    border-color: #222;
-  }
-
-  .code {
-    background: #111;
-  }
-
-  .logo img {
-    filter: invert(1);
-  }
+  max-height: 500px;
+  width: 1000px;
+  object-fit: contain;
+  position: relative;
 }

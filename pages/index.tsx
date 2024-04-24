@@ -31,14 +31,20 @@ export default function Home() {
     }
   };
 
-
   return (
     <div className="container">
       <Head>
         <title>Vinil Store - Login</title>
         <meta name="description" content="Vinil Store" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <header className="header">
+        <div className="logo_container">
+          <img className="logo" src="/imgs/logo_sem_fundo.png" alt="Logo" />
+        </div>
+      </header>
+
+
 
       <main className="main">
         <h1 className="title">
@@ -46,37 +52,39 @@ export default function Home() {
         </h1>
 
         <form className="form" onSubmit={handleSubmit}>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className="label">Email:</label>
           <input
             type="email"
             id="email"
             name="email"
+            className='input'
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
-
-          <label htmlFor="senha">Senha:</label>
+          <label htmlFor="senha" className="label-senha">Senha:</label>
           <input
             type="password"
             id="senha"
             name="senha"
+            className='input'
+            value={senha}
             onChange={(e) => setSenha(e.target.value)}
+            required
           />
-
-          <button type="submit">Entrar</button>
+          <button type="submit" className='button'>Entrar</button>
         </form>
 
         <p className="signup">
-          Novo usuário? 
-           <Link href="/cadastro">
+          Novo usuário?
+          <Link href="/cadastro" className='cadastro'>
             Cadastre-se
-           </Link>
+          </Link>
         </p>
       </main>
 
       <footer className="footer">
-        <p>Gostou do projeto? Entre em
-          <Link href='https://www.linkedin.com/in/tiago-melari-81793862/'> contato </Link>
-          comigo!
+        <p>Gostou do projeto? Entre em <Link href='https://www.linkedin.com/in/tiago-melari-81793862/'> contato </Link> comigo!
         </p>
       </footer>
     </div>

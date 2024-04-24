@@ -1,0 +1,50 @@
+.main {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    h3 {
+        margin-bottom: 10px;
+        font-size: 1.3em;
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+}
+
+.card.last {
+    margin-right: 0;
+}
+
+#button-estq {
+    font-size: 18px;
+    width: 120px;
+    margin-top: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: $primary-color;
+    text-align: center;
+    font-size: 15px;
+    position: relative;
+
+    &:hover {
+        background-color: darken($complementary-color-2, 10%);
+    }
+}
